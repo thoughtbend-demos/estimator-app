@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  authModule: {
+    domain: 'thoughtbend.us.auth0.com',
+    clientId: 'YFp68hpzhMS0QmFqy9WCpr4rg0fhIM6e'
+  }
 };
 
 /*
