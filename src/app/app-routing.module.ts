@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import {PreloadAllModules, Route, RouterModule} from '@angular/router';
+import {WelcomeComponent} from './home/welcome/welcome.component';
 
 const ROUTES: Route[] = [
-  { path: 'client',
-    // canActivate: [AuthGuard],
-    data: { preload: true },
-    loadChildren: () =>
-      import('./client/client.module').then(m => m.ClientModule)
+  {
+    path: 'welcome', component: WelcomeComponent
   },
   {
     path: 'estimate',
@@ -14,7 +12,16 @@ const ROUTES: Route[] = [
     loadChildren: () =>
       import('./estimate/estimate.module').then(m => m.EstimateModule)
   },
-  { path: '', redirectTo: 'client', pathMatch: 'full' },
+  {
+    path: 'client',
+    // canActivate: [AuthGuard],
+    data: { preload: true },
+    loadChildren: () =>
+      import('./client/client.module').then(m => m.ClientModule)
+  },
+  {
+    path: '', redirectTo: 'welcome', pathMatch: 'full'
+  }
   /*{ path: '**', component: PageNotFoundComponent }*/
 ];
 

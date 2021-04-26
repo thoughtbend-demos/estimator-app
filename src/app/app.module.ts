@@ -11,11 +11,13 @@ import {AuthGuard, AuthHttpInterceptor, AuthModule} from '@auth0/auth0-angular';
 import { AppComponent } from './app.component';
 import { LoginButtonComponent } from './auth/login-button/login-button.component';
 import {environment} from '../environments/environment';
+import { WelcomeComponent } from './home/welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginButtonComponent
+    LoginButtonComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +26,6 @@ import {environment} from '../environments/environment';
       clientId: environment.authModule.clientId,
       scope: 'openid profile email'
     }),
-    ClientModule,
-    EstimateModule,
     AppRoutingModule
   ],
   providers: [],

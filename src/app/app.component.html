@@ -4,9 +4,16 @@
     <a class="navbar-brand" href="#">Estimator App</a>
     <ul class="navbar-nav">
       <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/welcome']"
+           routerLinkActive="active"
+           *ngIf="auth.isAuthenticated$ | async;" >Home</a>
+
+      </li>
+      <li class="nav-item">
         <a class="nav-link" [routerLink]="['/client']"
            routerLinkActive="active"
            *ngIf="auth.isAuthenticated$ | async;" >Clients</a>
+
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/estimate']"
